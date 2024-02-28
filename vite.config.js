@@ -4,5 +4,6 @@ import eslint from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/static-job-listings-deploy",
   plugins: [react(), eslint()],
 })
