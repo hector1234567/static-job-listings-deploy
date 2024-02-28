@@ -23,7 +23,7 @@ export default function JobsProvider({children}) {
         setJobs(filterJobsArray(jobsData, filters));
       }
       setIsLoading(false);
-    }, 1000);
+    }, 300);
   }, [filters]);
 
   function handleAddFilter(fName) {
