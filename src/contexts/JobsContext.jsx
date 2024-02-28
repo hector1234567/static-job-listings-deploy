@@ -12,14 +12,18 @@ JobsProvider.propTypes = {
 export default function JobsProvider({children}) {
   const [jobs, setJobs] = useState([]);
   const [filters, setFilters] = useState([]);
-  const [isLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(function() {
+    setIsLoading(true);
+    setTimeout(function() {
       if(!filters.length) {
         setJobs(jobsData);
       } else {
         setJobs(filterJobsArray(jobsData, filters));
       }
+      setIsLoading(false);
+    }, 1000);
   }, [filters]);
 
   function handleAddFilter(fName) {
